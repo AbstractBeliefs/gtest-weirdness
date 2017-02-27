@@ -5,7 +5,7 @@
 #include <string.h>
 #include <stdio.h>
 
-vs_heightmap_t heightmap_from_array(uint32_t rows, uint32_t cols, uint32_t *input){
+vs_heightmap_t heightmap_from_array(uint32_t rows, uint32_t cols, double *input){
     vs_heightmap_t heightmap;
 
     heightmap.rows = rows;
@@ -17,9 +17,9 @@ vs_heightmap_t heightmap_from_array(uint32_t rows, uint32_t cols, uint32_t *inpu
     heightmap.yll = 0;
 
     heightmap.nodata = -9999;
-    heightmap.heightmap = calloc(rows * cols, sizeof(uint32_t));
+    heightmap.heightmap = calloc(rows * cols, sizeof(double));
 
-    memcpy(heightmap.heightmap, input, rows*cols*sizeof(uint32_t));
+    memcpy(heightmap.heightmap, input, rows*cols*sizeof(double));
 
     return heightmap;
 }
@@ -96,9 +96,9 @@ vs_viewshed_t viewshed_from_array(uint32_t rows, uint32_t cols, bool *input){
     viewshed.xll = 0;
     viewshed.yll = 0;
 
-    viewshed.viewshed = calloc(rows * cols, sizeof(uint32_t));
+    viewshed.viewshed = calloc(rows * cols, sizeof(double));
 
-    memcpy(viewshed.viewshed, input, rows*cols*sizeof(uint32_t));
+    memcpy(viewshed.viewshed, input, rows*cols*sizeof(double));
 
     return viewshed;
 }

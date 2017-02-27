@@ -7,7 +7,7 @@
 #include "common.h"
 
 TEST(Common, HeightmapFromArray){
-    uint32_t map_array[9] = {
+    double map_array[9] = {
         1, 1, 1,
         1, 3, 1,
         1, 1, 1
